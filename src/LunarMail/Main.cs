@@ -13,6 +13,8 @@ internal class Main(ILogger<Main> logger)
         var pstName = new FileInfo(pstPath).Name;
         logger.LogInformation("Reading {pst}", pstName);
 
+        long count = 0;
+
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
@@ -41,6 +43,8 @@ internal class Main(ILogger<Main> logger)
 
                 if (artifact.Info is XstMessage message)
                 {
+
+                    count++;
                     //foreach (var attachment in message.Attachments)
                     //{
                     //    attachment.SaveToStream(new MemoryStream());
@@ -57,7 +61,7 @@ internal class Main(ILogger<Main> logger)
 
         stopwatch.Stop();
 
-        logger.LogInformation("Mailbox {pst} read in {elapsed}", pstName, stopwatch.Elapsed);
+        logger.LogInformation("Mailbox {pst} read {count} items in {elapsed}", pstName, count, stopwatch.Elapsed);
 
 
         await Task.CompletedTask;

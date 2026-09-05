@@ -2,7 +2,7 @@
   "profiles": {
     "Run": {
       "commandName": "Project",
-      "commandLineArgs": "run --pst e:\\andrea_ring_000.pst"
+      "commandLineArgs": "run --pst C:\\Sets\\150K\\E2E05E407F720A60238AA67EAFACF7AD.ost"
     },
     "Help": {
       "commandName": "Project",
